@@ -62,7 +62,7 @@ A fully serverless e-commerce web application built using AWS services. The proj
 ---
 ## Project Status
 
-🚧 This project is currently under active development.
+ This project is currently under active development.
 
 Completed:
 - Responsive frontend
