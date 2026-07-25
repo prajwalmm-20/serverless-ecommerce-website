@@ -1,28 +1,18 @@
-/* ==========================================
-   CLOUDCART
-   SCRIPT.JS - PART 1
-========================================== */
 
-// ==========================================
-// API URL
-// ==========================================
+// API URL 
 
 const API_URL =
 "https://hygtvss5cf.execute-api.ap-south-1.amazonaws.com/prod/products";
 
 
-// ==========================================
-// GLOBAL VARIABLES
-// ==========================================
+// GLOBAL VARIABLES 
 
 let products = [];
 let filteredProducts = [];
 let cart = [];
 
 
-// ==========================================
-// PAGE LOAD
-// ==========================================
+// PAGE LOAD 
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -31,9 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ==========================================
-// FETCH PRODUCTS FROM AWS
-// ==========================================
+// FETCH PRODUCTS FROM AWS 
 
 async function loadProducts(){
 
@@ -88,9 +76,7 @@ async function loadProducts(){
 
 
 
-// ==========================================
 // DISPLAY PRODUCTS
-// ==========================================
 
 function displayProducts(productList){
 
@@ -123,9 +109,7 @@ function displayProducts(productList){
 
 
 
-// ==========================================
-// CREATE PRODUCT CARD
-// ==========================================
+// CREATE PRODUCT CARD 
 
 function createCard(product){
 
@@ -202,9 +186,7 @@ onclick="openModal('${product.productId}')">
 
 
 
-// ==========================================
-// PRICE FORMAT
-// ==========================================
+// PRICE FORMAT 
 
 function formatPrice(price){
 
@@ -218,9 +200,7 @@ function formatPrice(price){
 
 
 
-// ==========================================
-// STAR RATING
-// ==========================================
+// STAR RATING 
 
 function generateStars(rating){
 
@@ -250,10 +230,7 @@ function generateStars(rating){
 }
 
 
-
-// ==========================================
-// STOCK BADGE
-// ==========================================
+// STOCK BADGE 
 
 function stockBadge(stock){
 
@@ -289,15 +266,9 @@ function stockBadge(stock){
 
 }
 
-/* ==========================================
-   CLOUDCART
-   SCRIPT.JS - PART 2
-========================================== */
-
-
-// ==========================================
+// 
 // SEARCH PRODUCTS
-// ==========================================
+// 
 
 const searchInput =
 document.getElementById("searchInput");
@@ -327,9 +298,9 @@ searchInput.addEventListener("input", function(){
 
 
 
-// ==========================================
+// 
 // CATEGORY FILTER
-// ==========================================
+// 
 
 const filterButtons =
 document.querySelectorAll(".filter-btn");
@@ -391,11 +362,7 @@ filterButtons.forEach(button=>{
 });
 
 
-
-
-// ==========================================
-// DARK MODE
-// ==========================================
+// DARK MODE 
 
 const themeToggle =
 document.getElementById("themeToggle");
@@ -434,11 +401,8 @@ themeToggle.addEventListener("click",()=>{
 });
 
 
-
-
-// ==========================================
-// CART SIDEBAR
-// ==========================================
+ 
+// CART SIDEBAR 
 
 const cartSidebar =
 document.getElementById("cartSidebar");
@@ -464,11 +428,8 @@ closeCart.addEventListener("click",()=>{
 });
 
 
-
-
-// ==========================================
-// CLOSE CART WHEN CLICKING OUTSIDE
-// ==========================================
+ 
+// CLOSE CART WHEN CLICKING OUTSIDE 
 
 document.addEventListener("click",(event)=>{
 
@@ -494,10 +455,7 @@ document.addEventListener("click",(event)=>{
 
 
 
-
-// ==========================================
-// ESC KEY CLOSES CART
-// ==========================================
+// ESC KEY CLOSES CART 
 
 document.addEventListener("keydown",(event)=>{
 
@@ -511,11 +469,7 @@ document.addEventListener("keydown",(event)=>{
 
 
 
-
-// ==========================================
-// OPTIONAL:
-// SORT PRODUCTS BY NAME
-// ==========================================
+// SORT PRODUCTS BY NAME 
 
 function sortProductsAZ(){
 
@@ -531,11 +485,7 @@ function sortProductsAZ(){
 
 
 
-
-// ==========================================
-// OPTIONAL:
 // SORT PRODUCTS BY PRICE
-// ==========================================
 
 function sortProductsLowToHigh(){
 
@@ -551,11 +501,7 @@ function sortProductsLowToHigh(){
 
 
 
-
-// ==========================================
-// OPTIONAL:
-// SORT PRODUCTS BY RATING
-// ==========================================
+// SORT PRODUCTS BY RATING 
 
 function sortProductsByRating(){
 
@@ -568,26 +514,17 @@ function sortProductsByRating(){
     displayProducts(filteredProducts);
 
 }
-/* ==========================================
-   CLOUDCART
-   SCRIPT.JS - PART 3
-========================================== */
-
-
-// ==========================================
+ 
 // LOAD CART FROM LOCAL STORAGE
-// ==========================================
+ 
 
 cart =
 JSON.parse(localStorage.getItem("cart")) || [];
 
 updateCart();
 
-
-
-// ==========================================
-// ADD PRODUCT TO CART
-// ==========================================
+ 
+// ADD PRODUCT TO CART 
 
 function addToCart(productId){
 
@@ -623,10 +560,9 @@ function addToCart(productId){
 }
 
 
-
-// ==========================================
+ 
 // SAVE CART
-// ==========================================
+
 
 function saveCart(){
 
@@ -643,10 +579,9 @@ function saveCart(){
 }
 
 
-
-// ==========================================
+ 
 // UPDATE CART
-// ==========================================
+ 
 
 function updateCart(){
 
@@ -761,10 +696,9 @@ function updateCart(){
 }
 
 
-
-// ==========================================
+ 
 // INCREASE QUANTITY
-// ==========================================
+
 
 function increaseQuantity(productId){
 
@@ -782,10 +716,8 @@ function increaseQuantity(productId){
 }
 
 
-
-// ==========================================
-// DECREASE QUANTITY
-// ==========================================
+ 
+// DECREASE QUANTITY 
 
 function decreaseQuantity(productId){
 
@@ -817,10 +749,8 @@ function decreaseQuantity(productId){
 }
 
 
-
-// ==========================================
-// REMOVE ITEM
-// ==========================================
+ 
+// REMOVE ITEM 
 
 function removeItem(productId){
 
@@ -837,10 +767,9 @@ function removeItem(productId){
 }
 
 
-
-// ==========================================
+ 
 // CLEAR CART
-// ==========================================
+ 
 
 document
 
@@ -858,10 +787,8 @@ document
 
 
 
-
-// ==========================================
-// TOAST NOTIFICATION
-// ==========================================
+ 
+// TOAST NOTIFICATION 
 
 function showToast(message){
 
@@ -892,9 +819,9 @@ function showToast(message){
     },2500);
 
 }
-// ==========================================
+ 
 // PRODUCT MODAL
-// ==========================================
+
 
 const modal =
 document.getElementById("productModal");
