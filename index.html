@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CloudCart | Serverless E-Commerce</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            <i class="fa-solid fa-cart-shopping"></i>
+            CloudCart
+        </div>
+
+        <div class="nav-right">
+
+            <button id="themeToggle">
+                🌙
+            </button>
+
+            <button id="cartBtn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart
+                <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <header class="hero">
+
+        <h1>CloudCart</h1>
+
+        <p>
+            A Professional Serverless E-Commerce Application
+            powered by AWS Lambda, API Gateway,
+            DynamoDB and Amazon S3.
+        </p>
+
+    </header>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="search-section">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products...">
+
+    </section>
+
+
+    <!-- ================= FILTERS ================= -->
+
+    <section class="filters">
+
+        <button class="filter-btn active"
+            data-category="All">
+            All
+        </button>
+
+        <button class="filter-btn"
+            data-category="Laptop">
+            Laptop
+        </button>
+
+        <button class="filter-btn"
+            data-category="Smartphone">
+            Smartphone
+        </button>
+
+        <button class="filter-btn"
+            data-category="Monitor">
+            Monitor
+        </button>
+
+        <button class="filter-btn"
+            data-category="Keyboard">
+            Keyboard
+        </button>
+
+        <button class="filter-btn"
+            data-category="Mouse">
+            Mouse
+        </button>
+
+        <button class="filter-btn"
+            data-category="Headphones">
+            Headphones
+        </button>
+
+        <button class="filter-btn"
+            data-category="Speaker">
+            Speaker
+        </button>
+
+        <button class="filter-btn"
+            data-category="Storage">
+            Storage
+        </button>
+
+        <button class="filter-btn"
+            data-category="Smartwatch">
+            Smartwatch
+        </button>
+
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <main>
+
+        <div id="loading">
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            Loading Products...
+
+        </div>
+
+        <div id="productContainer"
+            class="product-grid">
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= CART ================= -->
+
+    <aside id="cartSidebar">
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button id="closeCart">
+
+                ✕
+
+            </button>
+
+        </div>
+
+        <div id="cartItems">
+
+            <p class="empty-cart">
+
+                Your cart is empty.
+
+            </p>
+
+        </div>
+
+        <div class="cart-footer">
+
+            <h3>
+
+                Total :
+                <span id="cartTotal">
+
+                    ₹0
+
+                </span>
+
+            </h3>
+
+            <button id="clearCart">
+
+                Clear Cart
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>CloudCart</h3>
+
+        <p>
+
+            Built using
+
+            AWS Lambda •
+            API Gateway •
+            DynamoDB •
+            Amazon S3 •
+            IAM •
+            CloudWatch
+
+        </p>
+
+        <p>
+
+            © 2026 Prajwal MM
+
+        </p>
+    </footer>
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div id="productModal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closeModal">&times;</span>
+
+        <h2 id="modalName"></h2>
+
+        <p id="modalBrand"></p>
+
+        <div id="modalCategory"></div>
+
+        <div id="modalRating"></div>
+
+        <div id="modalPrice"></div>
+
+        <div id="modalStock"></div>
+
+        <p id="modalDescription"></p>
+
+        <button id="modalCartBtn">
+
+            Add To Cart
+
+        </button>
+
+    </div>
+
+</div>
+    
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
