@@ -30,7 +30,7 @@ A fully serverless e-commerce web application built using AWS services. The proj
 
 # Architecture
 
-![Serverless Architecture](Architecture/Serverless-ecom-architecture.png)
+![Serverless Architecture](Architecture/serverless-ecom-architecture.png)
 
 ---
 
