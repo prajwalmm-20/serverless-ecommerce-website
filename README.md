@@ -1,4 +1,4 @@
-# 🛒 Serverless E-Commerce Website on AWS
+#  Serverless E-Commerce Website on AWS
 
 A fully serverless e-commerce web application built using AWS services. The project demonstrates how to build a scalable, cost-effective online store without managing traditional servers.
 
