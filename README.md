@@ -13,6 +13,15 @@ A fully serverless e-commerce web application built using AWS services. The proj
 - Implemented IAM roles following least-privilege principles
 - Monitored backend execution using Amazon CloudWatch
 
+## Authentication
+
+- Amazon Cognito Hosted UI
+- User Registration
+- User Login
+- User Logout
+- OAuth 2.0 Authorization Code Flow
+
+
 ##  Features
 
 - Product catalog
@@ -25,14 +34,12 @@ A fully serverless e-commerce web application built using AWS services. The proj
 - AWS Lambda business logic
 - DynamoDB product database
 - CloudWatch logging
+- Authorization Code Exchange
+- Admin Dashboard
+- Role-Based Access Control (RBAC)
 
 ---
 
-# Architecture
-
-![Serverless Architecture](Architecture/serverless-ecom-architecture.png)
-
----
 
 # AWS Services Used
 
