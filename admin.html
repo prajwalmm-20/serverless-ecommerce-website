@@ -1,29 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin Dashboard</title>
+    <title>CloudCart Admin Dashboard</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-
+    <link rel="stylesheet" href="admin.css">
 </head>
 
 <body>
 
-<h1>Admin Dashboard</h1>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🛒 CloudCart
+        </div>
+
+        <nav>
+            <a href="#" class="active">📊 Dashboard</a>
+            <a href="#products">📦 Products</a>
+            <a href="#orders">🛍️ Orders</a>
+            <a href="#users">👥 Users</a>
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">
+            🚪 Logout
+        </button>
+
+    </aside>
 
 
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p>Manage your CloudCart store</p>
+            </div>
+
+            <div class="admin-profile">
+                <div class="avatar">A</div>
+
+                <div>
+                    <strong>Administrator</strong>
+                    <small>Admin</small>
+                </div>
+            </div>
+
+        </header>
 
 
+        <!-- Statistics -->
+        <section class="stats">
 
-<script src="https://unpkg.com/aws-amplify/dist/aws-amplify.min.js"></script>
+            <div class="stat-card">
+                <div class="stat-icon">📦</div>
 
-<script src="../js/auth.js"></script>
-<script src="../js/admin.js"></script>
+                <div>
+                    <h3 id="totalProducts">10</h3>
+                    <p>Total Products</p>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+
+                <div>
+                    <h3 id="inStock">8</h3>
+                    <p>In Stock</p>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">⚠️</div>
+
+                <div>
+                    <h3 id="lowStock">2</h3>
+                    <p>Low Stock</p>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+
+                <div>
+                    <h3 id="totalValue">₹0</h3>
+                    <p>Inventory Value</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Product Management -->
+        <section class="products-section" id="products">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Product Management</h2>
+                    <p>View and manage your products</p>
+                </div>
+
+                <button id="addProductBtn" class="add-btn">
+                    + Add Product
+                </button>
+
+            </div>
+
+
+            <!-- Search -->
+            <div class="search-container">
+
+                <input
+                    type="text"
+                    id="productSearch"
+                    placeholder="Search products..."
+                >
+
+            </div>
+
+
+            <!-- Product Table -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="productTableBody">
+
+                        <!-- Products will be loaded here -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2 id="modalTitle">Add Product</h2>
+
+                <button id="closeModal">×</button>
+
+            </div>
+
+
+            <form id="productForm">
+
+                <input type="hidden" id="productId">
+
+
+                <label>
+                    Product Name
+                    <input
+                        type="text"
+                        id="productName"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Category
+
+                    <select id="productCategory" required>
+
+                        <option value="">Select Category</option>
+
+                        <option value="Laptop">Laptop</option>
+                        <option value="Smartphone">Smartphone</option>
+                        <option value="Headphones">Headphones</option>
+                        <option value="Mouse">Mouse</option>
+                        <option value="Keyboard">Keyboard</option>
+                        <option value="Monitor">Monitor</option>
+                        <option value="Storage">Storage</option>
+                        <option value="Speaker">Speaker</option>
+                        <option value="Smartwatch">Smartwatch</option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Price
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Stock
+
+                    <input
+                        type="number"
+                        id="productStock"
+                        min="0"
+                        required
+                    >
+                </label>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="cancel-btn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+                        Save Product
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/auth.js"></script>
+<script src="admin.js"></script>
 
 </body>
-
 </html>

@@ -12,84 +12,137 @@
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
+    <link
+        rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
+
 <body>
 
-    <!-- NAVBAR  -->
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
 
     <nav>
 
+        <!-- Logo -->
         <div class="logo">
+
             <i class="fa-solid fa-cart-shopping"></i>
+
             CloudCart
+
         </div>
 
-       <div class="nav-right">
 
-    <!-- Welcome Text -->
-    <span id="welcomeUser" style="display:none;"></span>
+        <!-- Right Side -->
+        <div class="nav-right">
 
-    <!-- Login -->
-    <button id="loginBtn">
-        Login
-    </button>
 
-    <!-- Sign Up -->
-    <button id="signupBtn">
-        Sign Up
-    </button>
+            <!-- USER GREETING -->
 
-    <!-- Admin -->
-    <button id="adminBtn" style="display:none;">
-        Admin
-    </button>
-
-    <!-- Logout -->
-    <button id="logoutBtn" style="display:none;">
-        Logout
-    </button>
-
-    <!-- Dark Mode -->
-    <button id="themeToggle">
-        🌙
-    </button>
-
-    <!-- Cart -->
-    <button id="cartBtn">
-        <i class="fa-solid fa-cart-shopping"></i>
-        Cart
-        <span id="cartCount">0</span>
-    </button>
-
+            <div id="userGreeting" style="display:none;">
+    Hi, <span id="userName"></span> 👋
 </div>
+
+
+            <!-- LOGIN -->
+
+            <button
+                id="loginBtn">
+
+                Login
+
+            </button>
+
+
+            <!-- SIGN UP -->
+
+            <button
+                id="signupBtn">
+
+                Sign Up
+
+            </button>
+
+
+            <!-- LOGOUT -->
+
+            <button
+                id="logoutBtn"
+                style="display:none;">
+
+                Logout
+
+            </button>
+
+
+            <!-- DARK MODE -->
+
+            <button
+                id="themeToggle">
+
+                🌙
+
+            </button>
+
+
+            <!-- CART -->
+
+            <button
+                id="cartBtn">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Cart
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </button>
+
+
+        </div>
 
     </nav>
 
 
-    <!-- HERO  -->
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
 
     <header class="hero">
 
-        <h1>CloudCart</h1>
+        <h1>
+            CloudCart
+        </h1>
 
         <p>
+
             A Professional Serverless E-Commerce Application
             powered by AWS Lambda, API Gateway,
             DynamoDB and Amazon S3.
+
         </p>
 
     </header>
 
 
-    <!--  SEARCH  -->
+
+    <!-- =========================================
+         SEARCH
+    ========================================== -->
 
     <section class="search-section">
 
@@ -101,64 +154,111 @@
     </section>
 
 
-    <!--  FILTERS  -->
+
+    <!-- =========================================
+         FILTERS
+    ========================================== -->
 
     <section class="filters">
 
-        <button class="filter-btn active"
+
+        <button
+            class="filter-btn active"
             data-category="All">
+
             All
+
         </button>
 
-        <button class="filter-btn"
+
+        <button
+            class="filter-btn"
             data-category="Laptop">
+
             Laptop
+
         </button>
 
-        <button class="filter-btn"
+
+        <button
+            class="filter-btn"
             data-category="Smartphone">
+
             Smartphone
+
         </button>
 
-        <button class="filter-btn"
+
+        <button
+            class="filter-btn"
             data-category="Monitor">
+
             Monitor
+
         </button>
 
-        <button class="filter-btn"
+
+        <button
+            class="filter-btn"
             data-category="Keyboard">
+
             Keyboard
+
         </button>
 
-        <button class="filter-btn"
+
+        <button
+            class="filter-btn"
             data-category="Mouse">
+
             Mouse
+
         </button>
 
-        <button class="filter-btn"
+
+        <button
+            class="filter-btn"
             data-category="Headphones">
+
             Headphones
+
         </button>
 
-        <button class="filter-btn"
+
+        <button
+            class="filter-btn"
             data-category="Speaker">
+
             Speaker
+
         </button>
 
-        <button class="filter-btn"
+
+        <button
+            class="filter-btn"
             data-category="Storage">
+
             Storage
+
         </button>
 
-        <button class="filter-btn"
+
+        <button
+            class="filter-btn"
             data-category="Smartwatch">
+
             Smartwatch
+
         </button>
+
 
     </section>
 
 
-    <!--  PRODUCTS  -->
+
+    <!-- =========================================
+         PRODUCTS
+    ========================================== -->
 
     <main>
 
@@ -170,7 +270,9 @@
 
         </div>
 
-        <div id="productContainer"
+
+        <div
+            id="productContainer"
             class="product-grid">
 
         </div>
@@ -179,13 +281,19 @@
 
 
 
-    <!--  CART  -->
+    <!-- =========================================
+         CART SIDEBAR
+    ========================================== -->
 
     <aside id="cartSidebar">
 
+
         <div class="cart-header">
 
-            <h2>Your Cart</h2>
+            <h2>
+                Your Cart
+            </h2>
+
 
             <button id="closeCart">
 
@@ -194,6 +302,7 @@
             </button>
 
         </div>
+
 
         <div id="cartItems">
 
@@ -205,11 +314,13 @@
 
         </div>
 
+
         <div class="cart-footer">
 
             <h3>
 
                 Total :
+
                 <span id="cartTotal">
 
                     ₹0
@@ -217,6 +328,7 @@
                 </span>
 
             </h3>
+
 
             <button id="clearCart">
 
@@ -226,70 +338,112 @@
 
         </div>
 
+
     </aside>
 
 
 
-    <!--  FOOTER  -->
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
     <footer>
 
-        <h3>CloudCart</h3>
+        <h3>
+            CloudCart
+        </h3>
+
 
         <p>
 
             Built using
 
             AWS Lambda •
+
             API Gateway •
+
             DynamoDB •
+
             Amazon S3 •
+
             IAM •
+
             CloudWatch
 
         </p>
+
 
         <p>
 
             © 2026 Prajwal MM
 
         </p>
+
     </footer>
-<!--  PRODUCT MODAL  -->
 
-<div id="productModal" class="modal">
 
-    <div class="modal-content">
 
-        <span id="closeModal">&times;</span>
+    <!-- =========================================
+         PRODUCT MODAL
+    ========================================== -->
 
-        <h2 id="modalName"></h2>
+    <div
+        id="productModal"
+        class="modal">
 
-        <p id="modalBrand"></p>
 
-        <div id="modalCategory"></div>
+        <div class="modal-content">
 
-        <div id="modalRating"></div>
 
-        <div id="modalPrice"></div>
+            <span id="closeModal">
 
-        <div id="modalStock"></div>
+                &times;
 
-        <p id="modalDescription"></p>
+            </span>
 
-        <button id="modalCartBtn">
 
-            Add To Cart
+            <h2 id="modalName"></h2>
 
-        </button>
+
+            <p id="modalBrand"></p>
+
+
+            <div id="modalCategory"></div>
+
+
+            <div id="modalRating"></div>
+
+
+            <div id="modalPrice"></div>
+
+
+            <div id="modalStock"></div>
+
+
+            <p id="modalDescription"></p>
+
+
+            <button id="modalCartBtn">
+
+                Add To Cart
+
+            </button>
+
+
+        </div>
 
     </div>
 
-</div>
-    
 
-    <script src="../js/auth.js"></script>
-<script src="../js/script.js"></script>
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="js/auth.js"></script>
+
+    <script src="js/script.js"></script>
+
 
 </body>
 

@@ -131,6 +131,19 @@ nav{
 
 }
 
+/* Logged-in user greeting */
+#userGreeting {
+    background: #f8f9fa;
+    color: #111827;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
 /*  HERO */
 
 .hero{

@@ -19,7 +19,7 @@ A fully serverless e-commerce web application built using AWS services. The proj
 - User Registration
 - User Login
 - User Logout
-- OAuth 2.0 Authorization Code Flow
+- Cognito JWT 
 
 
 ##  Features
@@ -43,14 +43,17 @@ A fully serverless e-commerce web application built using AWS services. The proj
 
 # AWS Services Used
 
-| Service | Purpose |
-|----------|----------|
-| Amazon S3 | Static Website Hosting |
-| API Gateway | REST API |
-| AWS Lambda | Backend Logic |
-| DynamoDB | Product Database |
-| IAM | Secure Permissions |
-| CloudWatch | Logging & Monitoring |
+## AWS Services Used
+
+- **Amazon S3** – Hosts the static CloudCart frontend and stores product images.
+- **Amazon CloudFront** – Provides secure HTTPS delivery and global distribution of the website.
+- **Amazon Cognito** – Handles user registration, authentication, email verification, and admin group-based authorization.
+- **Amazon API Gateway** – Provides API endpoints for communication between the frontend and serverless backend.
+- **AWS Lambda** – Executes serverless backend logic for product CRUD and inventory management.
+- **Amazon DynamoDB** – Stores product and inventory data.
+- **AWS IAM** – Manages permissions and secure access between AWS services.
+- **Amazon CloudWatch** – Provides Lambda logging, monitoring, and troubleshooting.
+
 
 ---
 
